@@ -1,0 +1,696 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: #f4f9ff;
+
+  overflow-x: hidden;
+}
+
+/* ================= LAYOUT ================= */
+
+.dashboard-layout {
+  display: flex;
+
+  min-height: 100vh;
+}
+
+/* ================= SIDEBAR ================= */
+
+.sidebar {
+  width: 280px;
+
+  background: linear-gradient(
+    180deg,
+    #1e3a5f,
+    #162947
+  );
+
+  padding: 30px 20px;
+
+  color: white;
+
+  position: fixed;
+
+  height: 100vh;
+
+  left: 0;
+
+  top: 0;
+
+  box-shadow:
+    5px 0 20px rgba(0,0,0,0.08);
+
+  z-index: 1000;
+}
+
+.sidebar-logo h2 {
+  font-size: 32px;
+
+  margin-bottom: 50px;
+
+  font-weight: 700;
+}
+
+.sidebar-links {
+  list-style: none;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 16px;
+}
+
+.sidebar-links li a {
+  display: flex;
+
+  align-items: center;
+
+  gap: 14px;
+
+  padding: 16px 18px;
+
+  border-radius: 16px;
+
+  color: white;
+
+  text-decoration: none;
+
+  font-size: 16px;
+
+  transition: 0.3s ease;
+}
+
+.sidebar-links li a:hover {
+  background: #0077ff;
+
+  transform: translateX(5px);
+}
+
+/* ================= CONTENT ================= */
+
+.dashboard-content {
+  margin-left: 280px;
+
+  width: calc(100% - 280px);
+
+  padding: 40px;
+}
+
+/* ================= PAGE ================= */
+
+.dashboard-page {
+  width: 100%;
+}
+
+/* ================= HEADER ================= */
+
+.dashboard-header {
+  margin-bottom: 40px;
+}
+
+.dashboard-header h1 {
+  font-size: 54px;
+
+  color: #1e375a;
+
+  margin-bottom: 10px;
+
+  font-weight: 700;
+}
+
+.dashboard-header p {
+  font-size: 18px;
+
+  color: #64748b;
+}
+
+/* ================= STATS ================= */
+
+.stats-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(auto-fit, minmax(260px, 1fr));
+
+  gap: 24px;
+
+  margin-bottom: 30px;
+}
+
+.stat-card {
+  background: white;
+
+  border-radius: 24px;
+
+  padding: 28px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 20px;
+
+  box-shadow:
+    0 10px 30px rgba(0,0,0,0.06);
+
+  transition: 0.3s;
+}
+
+.stat-card:hover {
+  transform: translateY(-5px);
+}
+
+.stat-card h2 {
+  font-size: 42px;
+
+  color: #0077ff;
+
+  margin-bottom: 6px;
+}
+
+.stat-card p {
+  color: #64748b;
+
+  font-size: 16px;
+}
+
+.stat-icon {
+  width: 70px;
+
+  height: 70px;
+
+  border-radius: 20px;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  color: white;
+
+  font-size: 28px;
+}
+
+.blue {
+  background: #3b82f6;
+}
+
+.green {
+  background: #10b981;
+}
+
+.purple {
+  background: #8b5cf6;
+}
+
+.red {
+  background: #ef4444;
+}
+
+/* ================= GRID CARDS ================= */
+
+.dashboard-grid {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 24px;
+}
+
+.dashboard-card {
+  background: white;
+
+  padding: 24px;
+
+  border-radius: 24px;
+
+  box-shadow:
+    0 10px 30px rgba(0,0,0,0.05);
+}
+
+.card-header {
+  margin-bottom: 24px;
+}
+
+.card-header h3 {
+  font-size: 24px;
+
+  color: #1e375a;
+}
+
+/* ================= APPOINTMENTS ================= */
+
+.appointment-list,
+.inventory-alerts {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 16px;
+}
+
+.appointment-item,
+.inventory-item {
+  background: #f8fbff;
+
+  border-radius: 18px;
+
+  padding: 18px;
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+}
+
+.appointment-item h4,
+.inventory-item h4 {
+  color: #1e375a;
+
+  margin-bottom: 6px;
+}
+
+.appointment-item p,
+.inventory-item p {
+  color: #64748b;
+
+  font-size: 14px;
+}
+
+/* ================= STATUS ================= */
+
+.status-badge {
+  padding: 8px 16px;
+
+  border-radius: 999px;
+
+  font-size: 13px;
+
+  font-weight: 600;
+}
+
+.status-badge.pending {
+  background: #fef3c7;
+
+  color: #b45309;
+}
+
+.status-badge.approved {
+  background: #dcfce7;
+
+  color: #15803d;
+}
+
+.status-badge.rejected {
+  background: #fee2e2;
+
+  color: #b91c1c;
+}
+
+/* ================= TABLE ================= */
+
+.table-container {
+  width: 100%;
+
+  overflow-x: auto;
+
+  background: white;
+
+  border-radius: 24px;
+
+  padding: 24px;
+
+  box-shadow:
+    0 10px 30px rgba(0,0,0,0.05);
+}
+
+.dashboard-table {
+  width: 100%;
+
+  border-collapse: collapse;
+}
+
+.dashboard-table thead {
+  background: #f1f5f9;
+}
+
+.dashboard-table th {
+  text-align: left;
+
+  padding: 18px;
+
+  color: #1e375a;
+
+  font-size: 15px;
+}
+
+.dashboard-table td {
+  padding: 18px;
+
+  border-bottom:
+    1px solid #edf2f7;
+
+  color: #475569;
+
+  font-size: 15px;
+}
+
+.dashboard-table tr:hover {
+  background: #f8fbff;
+}
+
+/* ================= BUTTONS ================= */
+
+.delete-btn {
+  background: #ef4444;
+
+  border: none;
+
+  color: white;
+
+  padding: 10px 16px;
+
+  border-radius: 10px;
+
+  cursor: pointer;
+
+  transition: 0.3s;
+}
+
+.delete-btn:hover {
+  background: #dc2626;
+}
+
+/* ================= FORMS ================= */
+
+.inventory-form,
+.doctor-form {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, 1fr);
+
+  gap: 20px;
+
+  background: white;
+
+  padding: 28px;
+
+  border-radius: 24px;
+
+  margin-bottom: 30px;
+
+  box-shadow:
+    0 10px 30px rgba(0,0,0,0.05);
+}
+
+.inventory-form input,
+.doctor-form input,
+.doctor-form select,
+.patient-search input {
+  height: 56px;
+
+  border-radius: 14px;
+
+  border: 1px solid #dbeafe;
+
+  padding: 0 18px;
+
+  outline: none;
+
+  font-size: 15px;
+
+  transition: 0.3s;
+}
+
+.inventory-form input:focus,
+.doctor-form input:focus,
+.doctor-form select:focus,
+.patient-search input:focus {
+  border-color: #0077ff;
+}
+
+.inventory-form button,
+.doctor-form button {
+  height: 56px;
+
+  border: none;
+
+  border-radius: 14px;
+
+  background: linear-gradient(
+    90deg,
+    #0ea5e9,
+    #0077ff
+  );
+
+  color: white;
+
+  font-size: 16px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+/* ================= SEARCH ================= */
+
+.patient-search {
+  margin-bottom: 24px;
+}
+
+/* ================= DOCTORS ================= */
+
+.doctors-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(auto-fit, minmax(280px, 1fr));
+
+  gap: 24px;
+}
+
+.doctor-card {
+  background: white;
+
+  border-radius: 24px;
+
+  padding: 24px;
+
+  text-align: center;
+
+  box-shadow:
+    0 10px 30px rgba(0,0,0,0.05);
+
+  transition: 0.3s;
+}
+
+.doctor-card:hover {
+  transform: translateY(-5px);
+}
+
+.doctor-card img {
+  width: 120px;
+
+  height: 120px;
+
+  object-fit: cover;
+
+  border-radius: 50%;
+
+  margin-bottom: 18px;
+
+  border: 5px solid #e0f2fe;
+}
+
+.doctor-card h3 {
+  color: #1e375a;
+
+  margin-bottom: 8px;
+}
+
+.doctor-card p {
+  color: #0077ff;
+
+  margin-bottom: 8px;
+}
+
+.doctor-card span {
+  display: block;
+
+  color: #64748b;
+
+  margin-bottom: 16px;
+}
+
+.doctor-preview {
+  width: 100px;
+
+  height: 100px;
+
+  border-radius: 50%;
+
+  object-fit: cover;
+}
+
+/* ================= LOGIN ================= */
+
+.login-page {
+  width: 100%;
+
+  min-height: 100vh;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+}
+
+.login-form {
+  width: 100%;
+
+  max-width: 460px;
+
+  background: white;
+
+  padding: 40px;
+
+  border-radius: 24px;
+
+  box-shadow:
+    0 10px 30px rgba(0,0,0,0.08);
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 20px;
+}
+
+.login-form h2 {
+  text-align: center;
+
+  color: #1e375a;
+
+  margin-bottom: 10px;
+
+  font-size: 34px;
+}
+
+.login-form input,
+.login-form select {
+  height: 56px;
+
+  border-radius: 14px;
+
+  border: 1px solid #dbeafe;
+
+  padding: 0 18px;
+
+  outline: none;
+}
+
+.login-form button {
+  height: 56px;
+
+  border: none;
+
+  border-radius: 14px;
+
+  background: linear-gradient(
+    90deg,
+    #0ea5e9,
+    #0077ff
+  );
+
+  color: white;
+
+  font-size: 16px;
+
+  cursor: pointer;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 1200px) {
+  .inventory-form,
+  .doctor-form {
+    grid-template-columns:
+      repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 992px) {
+  .sidebar {
+    width: 90px;
+  }
+
+  .sidebar-logo h2,
+  .sidebar-links li a span {
+    display: none;
+  }
+
+  .dashboard-content {
+    margin-left: 90px;
+
+    width: calc(100% - 90px);
+  }
+
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .inventory-form,
+  .doctor-form {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .dashboard-content {
+    padding: 20px;
+  }
+
+  .dashboard-header h1 {
+    font-size: 38px;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+}
+.logout-btn {
+  margin-top: 30px;
+
+  width: 100%;
+
+  height: 52px;
+
+  border: none;
+
+  border-radius: 14px;
+
+  background: #ef4444;
+
+  color: white;
+
+  font-size: 16px;
+
+  cursor: pointer;
+
+  transition: 0.3s;
+}
+
+.logout-btn:hover {
+  background: #dc2626;
+}
