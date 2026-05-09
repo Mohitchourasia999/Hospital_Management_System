@@ -15,7 +15,7 @@ config({ path: './config/config.env' });
 //middleware for frontend 
 app.use(
     cors({
-    origin: [process.env.FRONTEND_URL, process.env.DASHBOARD_URL],
+    origin: true,
     methods : ['GET', 'POST', 'PUT', 'DELETE'],
     credentials : true,
 })
